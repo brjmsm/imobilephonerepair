@@ -1,0 +1,187 @@
+---
+interface PricingModel {
+  model: string;
+  screen: string;
+  battery: string;
+  combo: string;
+}
+
+const pricingData: PricingModel[] = [
+  { model: 'iPhone X', screen: '$110', battery: '$60', combo: '$150' },
+  { model: 'iPhone XR', screen: '$110', battery: '$60', combo: '$150' },
+  { model: 'iPhone XS', screen: '$120', battery: '$60', combo: '$160' },
+  { model: 'iPhone XS Max', screen: '$130', battery: '$60', combo: '$170' },
+  { model: 'iPhone 11', screen: '$110', battery: '$60', combo: '$150' },
+  { model: 'iPhone 11 Pro', screen: '$130', battery: '$60', combo: '$170' },
+  { model: 'iPhone 11 Pro Max', screen: '$140', battery: '$60', combo: '$180' },
+  { model: 'iPhone 12', screen: '$120', battery: '$60', combo: '$160' },
+  { model: 'iPhone 12 Mini', screen: '$120', battery: '$60', combo: '$160' },
+  { model: 'iPhone 12 Pro', screen: '$130', battery: '$60', combo: '$170' },
+  { model: 'iPhone 12 Pro Max', screen: '$140', battery: '$60', combo: '$180' },
+  { model: 'iPhone 13', screen: '$120', battery: '$60', combo: '$160' },
+  { model: 'iPhone 13 Mini', screen: '$120', battery: '$60', combo: '$160' },
+  { model: 'iPhone 13 Pro', screen: '$140', battery: '$60', combo: '$180' },
+  { model: 'iPhone 13 Pro Max', screen: '$150', battery: '$60', combo: '$190' },
+  { model: 'iPhone 14', screen: '$130', battery: '$60', combo: '$170' },
+  { model: 'iPhone 14 Plus', screen: '$140', battery: '$60', combo: '$180' },
+  { model: 'iPhone 14 Pro', screen: '$160', battery: '$60', combo: '$200' },
+  { model: 'iPhone 14 Pro Max', screen: '$170', battery: '$60', combo: '$210' },
+  { model: 'iPhone 15', screen: '$140', battery: '$65', combo: '$185' },
+  { model: 'iPhone 15 Plus', screen: '$150', battery: '$65', combo: '$195' },
+  { model: 'iPhone 15 Pro', screen: '$170', battery: '$65', combo: '$215' },
+  { model: 'iPhone 15 Pro Max', screen: '$180', battery: '$65', combo: '$225' },
+  { model: 'iPhone 16', screen: '$150', battery: '$65', combo: '$195' },
+  { model: 'iPhone 16 Plus', screen: '$160', battery: '$65', combo: '$205' },
+  { model: 'iPhone 16 Pro', screen: '$180', battery: '$65', combo: '$225' },
+  { model: 'iPhone 16 Pro Max', screen: '$195', battery: '$65', combo: '$240' },
+  { model: 'iPhone 17', screen: '$180', battery: '$70', combo: '$230' },
+  { model: 'iPhone 17 Pro', screen: '$200', battery: '$70', combo: '$250' },
+  { model: 'iPhone 17 Pro Max', screen: '$220', battery: '$70', combo: '$270' },
+];
+
+const cards = [
+  {
+    title: 'Screen Replacement',
+    price: '$110',
+    badge: 'Most Popular',
+    badgeColor: 'bg-primary text-white',
+    features: [
+      'Free screen protector included',
+      'iPhone X through 17 Pro Max',
+      'Done at your door',
+      'High-quality OLED screens',
+    ],
+    cta: 'Book Screen Repair',
+  },
+  {
+    title: 'Battery Replacement',
+    price: '$60',
+    badge: null,
+    badgeColor: '',
+    features: [
+      '30-minute service',
+      'All iPhone models',
+      'We come to you',
+      'Genuine-grade batteries',
+    ],
+    cta: 'Book Battery Repair',
+  },
+  {
+    title: 'Combo Deal',
+    price: '$150',
+    badge: 'Best Value',
+    badgeColor: 'bg-success text-white',
+    features: [
+      'Screen + Battery same visit',
+      'Save $20',
+      'Free screen protector',
+      'Best deal for your iPhone',
+    ],
+    cta: 'Book Combo Deal',
+  },
+];
+---
+
+<section id="pricing" class="section-padding bg-surface">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 md:mb-16 fade-in">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-text-primary mb-4">
+        Transparent Pricing — No Surprises
+      </h2>
+      <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+        Upfront pricing for every iPhone model. The price you see is the price you pay — no hidden fees.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12 md:mb-16">
+      {cards.map((card, i) => (
+        <div
+          class={`relative bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-6 lg:p-8 fade-in ${i === 0 ? 'ring-2 ring-primary' : ''}`}
+          style={`transition-delay: ${i * 150}ms`}
+        >
+          {card.badge && (
+            <div class={`absolute -top-3 left-6 ${card.badgeColor} text-xs font-heading font-bold px-3 py-1 rounded-full`}>
+              {card.badge}
+            </div>
+          )}
+
+          <h3 class="text-xl font-heading font-bold text-text-primary mb-2">
+            {card.title}
+          </h3>
+
+          <div class="mb-6">
+            <span class="text-4xl font-heading font-extrabold text-primary">{card.price}</span>
+            <span class="text-text-secondary text-sm ml-1">starting at</span>
+          </div>
+
+          <ul class="space-y-3 mb-8">
+            {card.features.map((feature) => (
+              <li class="flex items-start gap-2 text-text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-success shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="tel:+17542599414"
+            class={`w-full text-center ${i === 0 ? 'btn-primary' : 'btn-secondary'}`}
+          >
+            {card.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Full Pricing Table Accordion -->
+    <div class="fade-in" style="transition-delay: 300ms">
+      <h3 class="text-xl font-heading font-bold text-text-primary text-center mb-6">
+        Full Pricing by Model
+      </h3>
+
+      <details class="bg-white rounded-card shadow-card overflow-hidden group max-w-4xl mx-auto">
+        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer hover:bg-surface transition-colors font-heading font-semibold text-text-primary">
+          <span>View all iPhone repair prices (iPhone X — 17 Pro Max)</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </summary>
+
+        <div class="border-t border-gray-100">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-surface text-left text-text-secondary">
+                  <th class="py-3 px-4 md:px-6 font-semibold">Model</th>
+                  <th class="py-3 px-4 md:px-6 font-semibold">Screen</th>
+                  <th class="py-3 px-4 md:px-6 font-semibold">Battery</th>
+                  <th class="py-3 px-4 md:px-6 font-semibold">Combo</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pricingData.map((item, i) => (
+                  <tr class={`border-t border-gray-50 ${i % 2 === 0 ? 'bg-white' : 'bg-surface/50'}`}>
+                    <td class="py-3 px-4 md:px-6 font-medium text-text-primary whitespace-nowrap">{item.model}</td>
+                    <td class="py-3 px-4 md:px-6 text-text-secondary">{item.screen}</td>
+                    <td class="py-3 px-4 md:px-6 text-text-secondary">{item.battery}</td>
+                    <td class="py-3 px-4 md:px-6 font-semibold text-primary">{item.combo}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="p-5 bg-pale text-center">
+            <p class="text-sm text-text-secondary mb-3">All prices include mobile service — we come to you</p>
+            <a href="tel:+17542599414" class="btn-primary">
+              Book Your Repair Now
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

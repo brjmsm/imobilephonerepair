@@ -1,0 +1,37 @@
+---
+const items = [
+  '5+ Years Experience',
+  '30-Min Repairs',
+  'We Come To You',
+  'iPhone X — 17 Pro Max',
+  'Same-Day Available',
+];
+---
+
+<section class="bg-pale py-4 overflow-hidden border-y border-primary/10">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Desktop: Static -->
+    <div class="hidden md:flex items-center justify-center gap-8 flex-wrap">
+      {items.map((item, i) => (
+        <div class="flex items-center gap-3">
+          <span class="font-heading font-semibold text-primary text-sm">{item}</span>
+          {i < items.length - 1 && (
+            <span class="text-primary/30 hidden md:inline">|</span>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Mobile: Marquee -->
+    <div class="md:hidden">
+      <div class="flex animate-marquee whitespace-nowrap">
+        {[...items, ...items].map((item) => (
+          <span class="inline-flex items-center gap-3 mx-6">
+            <span class="font-heading font-semibold text-primary text-sm">{item}</span>
+            <span class="text-primary/30">|</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

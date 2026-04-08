@@ -1,0 +1,108 @@
+---
+const currentYear = new Date().getFullYear();
+
+const services = [
+  'iPhone Screen Repair',
+  'Battery Replacement',
+  'Combo Deals',
+];
+
+const areas = [
+  'Lake Worth',
+  'Boynton Beach',
+  'Delray Beach',
+  'Greenacres',
+  'Wellington',
+];
+---
+
+<footer class="bg-primary-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+      <!-- Brand -->
+      <div>
+        <div class="mb-4">
+          <span class="text-2xl font-heading font-extrabold text-white">iMobile</span>
+          <span class="text-2xl font-heading font-medium text-white/70"> Phone Repair</span>
+        </div>
+        <p class="text-white/60 leading-relaxed mb-4">
+          We Come To You — mobile iPhone screen and battery repair across Palm Beach County. Same-day service available.
+        </p>
+        <p class="text-white/60 text-sm">
+          5+ years hands-on repair experience
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="font-heading font-bold text-lg mb-4">Services</h4>
+        <ul class="space-y-2">
+          {services.map((service) => (
+            <li>
+              <a href="#pricing" class="text-white/60 hover:text-white transition-colors text-sm">
+                {service}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <h4 class="font-heading font-bold text-lg mt-8 mb-4">Service Area</h4>
+        <ul class="space-y-2">
+          {areas.map((area) => (
+            <li>
+              <a href="#service-area" class="text-white/60 hover:text-white transition-colors text-sm">
+                {area}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-heading font-bold text-lg mb-4">Contact</h4>
+        <ul class="space-y-4">
+          <li>
+            <a
+              href="tel:+17542599414"
+              class="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+              (754) 259-9414
+            </a>
+          </li>
+          <li>
+            <a
+              href="sms:+17542599414"
+              class="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path></svg>
+              Text us
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:bjcaphonerepair@gmail.com"
+              class="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              bjcaphonerepair@gmail.com
+            </a>
+          </li>
+        </ul>
+
+        <div class="mt-6">
+          <h4 class="font-heading font-bold text-sm mb-2">Hours</h4>
+          <p class="text-white/60 text-sm">Mon – Sat: 2:00 PM – 7:00 PM</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 pt-8 border-t border-white/10 text-center">
+      <p class="text-white/40 text-sm">
+        &copy; {currentYear} iMobile Phone Repair. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/imobile-branded-vehicle.png';
+---
+
+<section id="hero" class="pt-20 md:pt-24 pb-8 md:pb-12" style="background: radial-gradient(ellipse at top left, #E3F2FD 0%, #FFFFFF 60%);">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- Left: Text Content -->
+      <div class="text-center lg:text-left">
+        <!-- Urgency Badge -->
+        <div class="inline-flex items-center gap-2 bg-pale text-primary text-sm font-semibold px-4 py-2 rounded-full mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          Slots available today in Boynton Beach
+        </div>
+
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-text-primary leading-tight mb-6">
+          We Come To You —<br />
+          <span class="text-primary">iPhone Repair At Your Door</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-text-secondary leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+          Mobile iPhone screen & battery repair in Lake Worth, Boynton Beach, Delray Beach & surrounding areas. Done in 30 minutes. 5+ years experience.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+          <a href="tel:+17542599414" class="btn-primary text-lg py-4 px-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+            Book Your Repair Now
+          </a>
+          <a href="tel:+17542599414" class="btn-secondary text-lg py-4 px-8">
+            Call (754) 259-9414
+          </a>
+        </div>
+
+        <!-- Trust Bar -->
+        <div class="flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start">
+          <div class="flex items-center gap-2 text-sm text-text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span>Same-day available</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>We drive to you</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Free screen protector included</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Before/After Repair Photo -->
+      <div class="flex justify-center items-center mt-4 lg:mt-0">
+        <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
+          <Image
+            src={heroImage}
+            alt="iMobile Phone Repair branded service vehicle — mobile iPhone repair in Lake Worth, Boynton Beach, and Delray Beach FL"
+            width={768}
+            height={512}
+            class="w-full h-auto rounded-2xl shadow-card"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 text-center">
+            <p class="text-xs font-heading font-semibold text-text-primary">
+              <span class="text-primary">We come to you.</span> Our branded repair vehicle at your door.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

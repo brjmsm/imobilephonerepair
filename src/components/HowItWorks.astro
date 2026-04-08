@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import repairImage from '../assets/images/hero-before-after-repair.png';
+
+const steps = [
+  {
+    number: '1',
+    title: 'Book your appointment',
+    description: 'Call or text (754) 259-9414. Tell us your model and what needs fixing. We confirm your slot same day.',
+    icon: 'phone',
+  },
+  {
+    number: '2',
+    title: 'We drive to you',
+    description: 'Our mobile technician comes to your home, office, or wherever you are in Lake Worth, Boynton Beach, Delray Beach, Greenacres or Wellington.',
+    icon: 'van',
+  },
+  {
+    number: '3',
+    title: 'Fixed in 30 minutes',
+    description: 'Screen replaced, protector installed, battery swapped — done at your door. No waiting rooms. No dropping off your phone.',
+    icon: 'check',
+  },
+];
+---
+
+<section id="services" class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-10 md:mb-12 fade-in">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-text-primary mb-4">
+        How iMobile Works
+      </h2>
+      <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+        The easiest iPhone repair experience in South Florida
+      </p>
+    </div>
+
+    <!-- Branded Vehicle Photo -->
+    <div class="flex justify-center mb-10 md:mb-14 fade-in" style="transition-delay: 100ms">
+      <div class="relative w-full max-w-md">
+        <Image
+          src={repairImage}
+          alt="iPhone screen repair before and after — cracked screen repaired to perfect condition by iMobile Phone Repair technician in Lake Worth FL"
+          width={512}
+          height={768}
+          class="w-full h-auto rounded-2xl shadow-card"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-heading font-bold px-4 py-1.5 rounded-full shadow-card whitespace-nowrap">
+          Real results — cracked to perfect
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-10 relative">
+      <!-- Connector line (desktop only) -->
+      <div class="hidden md:block absolute top-16 left-[20%] right-[20%] h-0.5 bg-primary/15" aria-hidden="true"></div>
+
+      {steps.map((step, i) => (
+        <div class="relative text-center fade-in" style={`transition-delay: ${(i + 1) * 150}ms`}>
+          <!-- Step Number -->
+          <div class="relative z-10 w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-6 text-xl font-heading font-bold shadow-card">
+            {step.number}
+          </div>
+
+          <!-- Icon -->
+          <div class="mb-4">
+            {step.icon === 'phone' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+              </svg>
+            )}
+            {step.icon === 'van' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            )}
+            {step.icon === 'check' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            )}
+          </div>
+
+          <h3 class="text-xl font-heading font-bold text-text-primary mb-3">
+            {step.title}
+          </h3>
+          <p class="text-text-secondary leading-relaxed max-w-sm mx-auto">
+            {step.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 fade-in" style="transition-delay: 600ms">
+      <a href="tel:+17542599414" class="btn-primary text-lg py-4 px-8">
+        Book Now — It's That Simple
+      </a>
+      <p class="mt-4 text-sm text-text-secondary">Same-day mobile iPhone repair — we come to you</p>
+    </div>
+  </div>
+</section>

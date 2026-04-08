@@ -1,0 +1,69 @@
+---
+const cities = [
+  { name: 'Lake Worth', zip: '33460' },
+  { name: 'Boynton Beach', zip: '33426' },
+  { name: 'Delray Beach', zip: '33444' },
+  { name: 'Greenacres', zip: '33413' },
+  { name: 'Wellington', zip: '33414' },
+];
+---
+
+<section id="service-area" class="section-padding bg-surface">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-10 md:mb-14 fade-in">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-text-primary mb-4">
+        Mobile iPhone Repair in Lake Worth, Boynton Beach & Delray Beach
+      </h2>
+      <p class="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
+        iMobile Phone Repair serves customers across Palm Beach County. Whether you're
+        in Lake Worth (33460), Boynton Beach (33426), Delray Beach (33444),
+        Greenacres (33413), or Wellington (33414) — our mobile repair technician
+        comes directly to you.
+      </p>
+      <p class="text-text-secondary mt-4 max-w-2xl mx-auto leading-relaxed">
+        No matter if you're at home, at work, or at a coffee shop — we find you, fix
+        your iPhone, and you're back to full in 30 minutes.
+      </p>
+    </div>
+
+    <!-- City Cards -->
+    <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar md:grid md:grid-cols-5 md:overflow-visible md:pb-0">
+      {cities.map((city, i) => (
+        <div
+          class="min-w-[220px] snap-center flex-shrink-0 md:min-w-0 bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-6 text-center fade-in"
+          style={`transition-delay: ${i * 100}ms`}
+        >
+          <!-- Map Pin Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto text-primary mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+
+          <h3 class="text-lg font-heading font-bold text-text-primary mb-1">
+            {city.name}
+          </h3>
+          <p class="text-sm text-text-secondary mb-3">
+            {city.zip}
+          </p>
+
+          <!-- Service Available Badge -->
+          <div class="inline-flex items-center gap-1.5 bg-green-50 text-success text-xs font-semibold px-3 py-1 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Service available
+          </div>
+
+          <div>
+            <a
+              href="tel:+17542599414"
+              class="text-primary font-heading font-semibold text-sm hover:text-primary-dark transition-colors"
+            >
+              Book in {city.name} &rarr;
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,102 @@
+---
+const trustCards = [
+  {
+    title: 'We come to you',
+    body: 'No driving, no waiting rooms. We repair your iPhone at your home, office, or anywhere in our service area.',
+    icon: 'van',
+  },
+  {
+    title: 'Same-day service',
+    body: 'Need it fixed today? Most appointments are confirmed same day. We work around your schedule.',
+    icon: 'clock',
+  },
+  {
+    title: '5+ years experience',
+    body: 'Our lead technician has more than half a decade of hands-on repair experience on all iPhone models.',
+    icon: 'wrench',
+  },
+  {
+    title: 'Free screen protector',
+    body: 'Every screen repair includes a premium screen protector installed on the spot — a $10+ value, free.',
+    icon: 'shield',
+  },
+  {
+    title: 'Transparent pricing',
+    body: 'No hidden fees. No upsells at the door. The price you see is the price you pay.',
+    icon: 'dollar',
+  },
+  {
+    title: 'Quality parts',
+    body: 'We use high-quality OLED replacement screens and genuine-grade batteries on every repair.',
+    icon: 'check',
+  },
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 md:mb-16 fade-in">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-text-primary mb-4">
+        Why South Florida Chooses iMobile
+      </h2>
+      <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+        Trusted mobile iPhone repair with transparent pricing and quality you can count on
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {trustCards.map((card, i) => (
+        <div
+          class="bg-white rounded-card shadow-card hover:shadow-card-hover transition-shadow p-6 lg:p-8 fade-in"
+          style={`transition-delay: ${i * 100}ms`}
+        >
+          <div class="mb-5">
+            {card.icon === 'van' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            )}
+            {card.icon === 'clock' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            )}
+            {card.icon === 'wrench' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            )}
+            {card.icon === 'shield' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            )}
+            {card.icon === 'dollar' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path>
+              </svg>
+            )}
+            {card.icon === 'check' && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            )}
+          </div>
+
+          <h3 class="text-lg font-heading font-bold text-text-primary mb-2">
+            {card.title}
+          </h3>
+          <p class="text-text-secondary leading-relaxed">
+            {card.body}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

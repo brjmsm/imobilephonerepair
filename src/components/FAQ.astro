@@ -1,0 +1,95 @@
+---
+const faqs = [
+  {
+    question: 'Do you really come to my house?',
+    answer: 'Yes — we are a fully mobile repair service. Our technician drives to your home, apartment, workplace, or wherever you are in our service area.',
+  },
+  {
+    question: 'How long does an iPhone screen repair take?',
+    answer: 'Most screen replacements are completed in 30 minutes or less at your location.',
+  },
+  {
+    question: 'What iPhone models do you repair?',
+    answer: 'We repair all models from iPhone X through iPhone 17 Pro Max.',
+  },
+  {
+    question: 'Do you use quality parts?',
+    answer: 'Yes — we use high-quality OLED screens and genuine-grade batteries on every repair.',
+  },
+  {
+    question: 'Is the free screen protector really free?',
+    answer: 'Yes — every screen replacement includes a premium screen protector installed at no extra charge.',
+  },
+  {
+    question: 'Do you offer same-day service?',
+    answer: 'Yes — text or call (754) 259-9414 and we\'ll confirm your slot same day in most cases.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer: 'Lake Worth, Boynton Beach, Delray Beach, Greenacres, Wellington, and surrounding Palm Beach County areas.',
+  },
+  {
+    question: 'How do I book an appointment?',
+    answer: 'Call or text (754) 259-9414. Tell us your iPhone model and what needs fixing — we\'ll handle the rest.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+---
+
+<section id="faq" class="section-padding bg-white">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12 fade-in">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-text-primary mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-lg text-text-secondary">
+        Everything you need to know about our mobile iPhone repair service
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      {faqs.map((faq, i) => (
+        <details
+          class="bg-white border border-gray-200 rounded-card overflow-hidden group fade-in"
+          style={`transition-delay: ${i * 75}ms`}
+        >
+          <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer hover:bg-surface transition-colors">
+            <h3 class="font-heading font-semibold text-text-primary text-left">
+              {faq.question}
+            </h3>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary shrink-0 transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-text-secondary leading-relaxed border-t border-gray-100 pt-4">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <!-- CTA below FAQ -->
+    <div class="text-center mt-10 fade-in" style="transition-delay: 600ms">
+      <p class="text-text-secondary mb-4">Still have questions?</p>
+      <a href="tel:+17542599414" class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+        Call (754) 259-9414
+      </a>
+    </div>
+  </div>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</section>
